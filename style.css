@@ -1,0 +1,66 @@
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+.topbar {
+    background: #1f2937;
+    color: white;
+    padding: 14px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.brand { font-weight: bold; }
+nav { display: flex; flex-wrap: wrap; gap: 10px; }
+nav a { color: white; text-decoration: none; padding: 6px 8px; }
+.container { width: 90%; max-width: 1200px; margin: 30px auto; }
+.login-card {
+    max-width: 420px; margin: 70px auto; background: white;
+    padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px #0001;
+}
+.panel, .card {
+    background: white; padding: 22px; border-radius: 10px;
+    box-shadow: 0 2px 10px #00000010; margin-bottom: 20px;
+}
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0; }
+.card strong { font-size: 30px; }
+label { display: block; font-weight: bold; margin: 12px 0 6px; }
+input, select {
+    width: 100%; padding: 10px; border: 1px solid #ccc;
+    border-radius: 6px; background: white;
+}
+button, .button {
+    display: inline-block; border: 0; background: #2563eb; color: white;
+    padding: 10px 16px; border-radius: 6px; cursor: pointer;
+    text-decoration: none; margin-top: 12px;
+}
+button.danger { background: #dc2626; margin: 0; }
+table {
+    width: 100%; border-collapse: collapse; background: white;
+    margin-top: 20px; overflow: hidden;
+}
+th, td { padding: 12px; border-bottom: 1px solid #ddd; text-align: left; }
+th { background: #e9eef5; }
+.alert { padding: 12px; border-radius: 7px; margin-bottom: 15px; }
+.alert.success { background: #dcfce7; color: #166534; }
+.alert.danger { background: #fee2e2; color: #991b1b; }
+.demo-box { margin-top: 20px; padding: 12px; background: #eef2ff; border-radius: 7px; }
+.muted { color: #666; }
+.page-head { display: flex; justify-content: space-between; align-items: center; }
+.search { display: flex; gap: 10px; margin: 20px 0; }
+.search input, .search select { flex: 1; }
+.search button { margin: 0; }
+.inline-form { display: flex; gap: 10px; }
+.inline-form input { flex: 1; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+@media (max-width: 800px) {
+    .topbar { flex-direction: column; align-items: flex-start; }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .two-col { grid-template-columns: 1fr; }
+    table { display: block; overflow-x: auto; }
+}

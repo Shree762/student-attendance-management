@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Add Student</h1>
+<div class="panel">
+<form method="post">
+    <label>Student ID</label><input name="student_id" placeholder="STU002" required>
+    <label>Name</label><input name="name" required>
+    <label>Class</label><input name="class_name" placeholder="BSc SY" required>
+    <label>Department</label><input name="department" placeholder="Computer Science" required>
+    <label>Email</label><input type="email" name="email">
+    <button type="submit">Save Student</button>
+</form>
+</div>
+{% endblock %}

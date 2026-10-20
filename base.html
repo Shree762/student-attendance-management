@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand">Student Attendance Management System</div>
+    {% if session.get("user_id") %}
+    <nav>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        {% if session.get("role") == "admin" %}
+        <a href="{{ url_for('students') }}">Students</a>
+        <a href="{{ url_for('subjects') }}">Subjects</a>
+        {% endif %}
+        {% if session.get("role") in ["admin", "faculty"] %}
+        <a href="{{ url_for('attendance') }}">Mark Attendance</a>
+        {% endif %}
+        <a href="{{ url_for('reports') }}">Reports</a>
+        {% if session.get("role") == "student" %}
+        <a href="{{ url_for('my_attendance') }}">My Attendance</a>
+        {% endif %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+    {% endif %}
+</header>
+
+<main class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="alert {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>

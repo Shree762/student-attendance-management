@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="login-card">
+    <h1>Login</h1>
+    <p class="muted">Student Attendance Management System</p>
+    <form method="post">
+        <label>Username</label>
+        <input type="text" name="username" required>
+
+        <label>Password</label>
+<div class="password-box">
+    <input type="password" name="password" id="loginPassword" required>
+    <button type="button" onclick="togglePassword('loginPassword', this)">👁️</button>
+</div>
+        <button type="submit">Login</button>
+    </form>
+
+    
+</div>
+<p>
+    Don't have an account?
+    <a href="{{ url_for('register') }}">Register here</a>
+</p>
+
+<script>
+function togglePassword(id, button) {
+    const password = document.getElementById(id);
+
+    if (password.type === "password") {
+        password.type = "text";
+        button.textContent = "🙈";
+    } else {
+        password.type = "password";
+        button.textContent = "👁️";
+    }
+}
+</script>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Dashboard</h1>
+<p class="muted">Welcome, {{ session.get("username") }} ({{ session.get("role") }})</p>
+
+<div class="cards">
+    <div class="card"><h3>Total Students</h3><strong>{{ total_students }}</strong></div>
+    <div class="card"><h3>Present Today</h3><strong>{{ present_today }}</strong></div>
+    <div class="card"><h3>Absent Today</h3><strong>{{ absent_today }}</strong></div>
+    <div class="card"><h3>Late Today</h3><strong>{{ late_today }}</strong></div>
+</div>
+
+<div class="panel">
+    <h2>Project Modules</h2>
+    <ul>
+        <li>Login and role-based access</li>
+        <li>Student management</li>
+        <li>Subject management</li>
+        <li>Daily attendance</li>
+        <li>Attendance reports and search</li>
+        <li>Attendance percentage for student</li>
+        <li>MySQL database storage</li>
+    </ul>
+</div>
+{% endblock %}

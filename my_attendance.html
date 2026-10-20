@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>My Attendance</h1>
+
+<div class="cards">
+    <div class="card"><h3>Total Records</h3><strong>{{ total }}</strong></div>
+    <div class="card"><h3>Present</h3><strong>{{ present }}</strong></div>
+    <div class="card"><h3>Attendance %</h3><strong>{{ percentage }}%</strong></div>
+</div>
+
+<table>
+<thead><tr><th>Date</th><th>Subject</th><th>Status</th></tr></thead>
+<tbody>
+{% for r in rows %}
+<tr><td>{{ r.attendance_date }}</td><td>{{ r.subject }}</td><td>{{ r.status }}</td></tr>
+{% else %}
+<tr><td colspan="3">No attendance records yet.</td></tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

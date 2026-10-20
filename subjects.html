@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Subject Management</h1>
+<div class="panel">
+<form method="post" action="{{ url_for('add_subject') }}" class="inline-form">
+    <input name="name" placeholder="Enter subject name" required>
+    <button type="submit">Add Subject</button>
+</form>
+</div>
+
+<table>
+<thead><tr><th>ID</th><th>Subject</th></tr></thead>
+<tbody>
+{% for s in subjects %}<tr><td>{{ s.id }}</td><td>{{ s.name }}</td></tr>
+{% else %}<tr><td colspan="2">No subjects.</td></tr>{% endfor %}
+</tbody>
+</table>
+{% endblock %}

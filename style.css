@@ -64,3 +64,69 @@ th { background: #e9eef5; }
     .two-col { grid-template-columns: 1fr; }
     table { display: block; overflow-x: auto; }
 }
+
+/* Login page layout fix */
+.login-card {
+    width: 100%;
+    max-width: 380px;
+    margin: 40px auto;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+}
+
+.login-card h1 {
+    margin-bottom: 24px;
+}
+
+.login-card form label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: 600;
+}
+
+.login-card form input {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    margin: 0 0 12px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+}
+
+.login-card .password-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.login-card .password-box input {
+    flex: 1;
+    min-width: 0;
+}
+
+.login-card .password-box button {
+    margin-bottom: 12px;
+    padding: 9px;
+    cursor: pointer;
+}
+
+.login-card form button[type="submit"] {
+    width: 100%;
+    padding: 11px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-card .register-link {
+    text-align: center;
+    margin-top: 20px;
+}
